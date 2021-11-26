@@ -37,6 +37,14 @@ app.set('view engine', 'handlebars')
 
 //Mongoose    
 
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost:27017/news').then(function(){
+    console.log('Conectado ao mongo...')
+}).catch(function(err){
+    console.log('Erro ao conectar com mongo.')
+})
+
+
 //public
 
 app.use(express.static(path.join(__dirname, 'public')))
