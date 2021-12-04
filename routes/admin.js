@@ -6,8 +6,12 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const passport = require('passport')
 
+require('../models/admin')
+const Admin = mongoose.model('admins')
+
+
 router.get('/singup', (req, res) => {
-    res.render('admin/registro')
+    res.render('admin/singup')
 })
 
 router.post('/singup', (req, res) => {
@@ -37,7 +41,7 @@ router.post('/singup', (req, res) => {
         res.render('admin/registro', {erros: erros})
 
     }else{
-        Admin.findOne({email: req.body.email}.then(function(admin){
+        Admin.findOne({email: req.body.email}).then(function(admin){
             if(admin){
                 req.flash("error_msg", "Já existe uma conta com esse email")
                 res.redirect('/start/registro')
@@ -70,7 +74,7 @@ router.post('/singup', (req, res) => {
         }).catch(function(err){
             req.flash('error_msg', "Houve um erro interno.")
             res.redirect('/')
-        }))
+        })
     }
 })
 
@@ -86,8 +90,10 @@ router.post('/login', function(req, res, next) {
     })(req, res, next)
 })
 
-router.get('/logout', eUser, function(req, res){
+router.get('/logout', function(req, res){
     req.logout()
     req.flash('success_msg', 'Deslogado com sucesso.')
     res.redirect('/')
 })
+
+module.exports = router

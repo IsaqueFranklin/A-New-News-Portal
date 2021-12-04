@@ -1,0 +1,116 @@
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+<div class="card di center">
+  <div class="card-body">
+    <img src="img/logo.png">
+    <br>
+    <p class="card-text center">Faça seu login no blog do Austrália Estúdios.</p>
+    <br>
+    <form action="/admin/login" method="post" class="do">
+        <br>
+        <br>
+        <input type="email" name="email" placeholder="email" required>
+        <br>
+        <br>
+        <br>
+        <input type="password" name="senha" placeholder="senha" required>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="submit" class="center btns">Entrar<button>
+        <br>
+    </form>
+      <hr>
+      <br>
+  </div>
+</div>
+
+<style>
+
+button {
+  border: none;
+  background-color: white;
+}
+
+.btns {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #060d13;
+        transition: all 0.3s ease-out;
+    }
+
+    .btns:hover,
+    .btns:hover {
+        background: #060d13;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+
+  .lol {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+.g {
+  color: #00994d;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.h {
+  font-family: 'Montaga', serif;
+  color: #404040;
+  font-size: 15px;
+}
+
+.l {
+  color: #404040;
+  font-family: 'Playfair Display', serif;
+}
+
+@media (min-width: 1000px){
+  .di {
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 150px;
+    margin-bottom: 200px;
+  }
+
+  .do {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  img {
+  width: 250px;
+  height: 250px;
+}
+}
+
+@media (max-width: 1000px){
+  .di {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+  }
+
+  .do {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  img {
+  width: 200px;
+  height: 200px;
+}
+}
+
+</style>

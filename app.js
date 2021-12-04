@@ -6,6 +6,10 @@ const app = express();
 const session = require('express-session');
 const flash = require('connect-flash');
 const mongoose = require('mongoose')
+const website = require('./routes/website')
+const admin = require('./routes/admin')
+const passport = require('passport')
+require('./config/auth')(passport)
 
 //Config
 
@@ -15,6 +19,8 @@ app.use(session({
     saveUninitialized: true
 }))
 
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(flash())
 
 //Middleware
@@ -38,7 +44,7 @@ app.set('view engine', 'handlebars')
 //Mongoose    
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/news').then(function(){
+mongoose.connect('mongodb+srv://newsportal:b1l1ona1re@cluster0.9woam.mongodb.net/myFirstDatabase?retryWrites=true&w=majority').then(function(){
     console.log('Conectado ao mongo...')
 }).catch(function(err){
     console.log('Erro ao conectar com mongo.')
@@ -50,6 +56,9 @@ mongoose.connect('mongodb://localhost:27017/news').then(function(){
 app.use(express.static(path.join(__dirname, 'public')))
 
 //Routes
+
+app.use('/website', website)
+app.use('/admin', admin)
 
 app.get('/', (req, res) => {
     res.render('index')

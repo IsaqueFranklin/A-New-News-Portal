@@ -1,0 +1,129 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+
+<div class="card di center">
+  <div class="card-body">
+    <br>
+    <img src="img/logo.png">
+    <br>
+    <p class="card-textr">Se você é um administrador do Austrália Estúdios sinta-se livre para criar sua conta.</p>
+    <br>
+    <br>
+    <br>
+    <form action="" method="post" class="do">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <br>
+        <br>
+        <input type="email" name="email" placeholder="Email" required>
+        <br>
+        <br>
+        <input type="password" name="senha" placeholder="Senha (min. 8 caracteres)" required>
+        <br>
+        <br>
+        <input type="password" name="senha2" placeholder="Repita sua senha" required>
+        <br>
+        <br>
+        <br>
+        <br>
+      <button type="submit" class="btns">Registrar</button>
+      <br>
+      <br>
+      <hr>
+      <div class="center">
+        <a href="/admin/login">Já tenho conta</a>
+      </div>
+    </form>
+    <br>
+  </div>
+</div>
+
+<style>
+  .lol {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+@media (min-width: 1000px){
+  .di {
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 150px;
+    margin-bottom: 200px;
+  }
+
+  .do {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  img {
+  width: 250px;
+  height: 250px;
+}
+}
+
+@media (max-width: 1000px){
+  .di {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+  }
+
+  .do {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  img {
+  width: 200px;
+  height: 200px;
+}
+}
+
+.g {
+  color: #00994d;
+  font-family: 'Oxygen', sans-serif;
+}
+.l {
+  color: #404040;
+  font-family: 'Playfair Display', serif;
+}
+.h {
+  font-family: 'Montaga', serif;
+  color: #404040;
+  font-size: 15px;
+}
+img {
+  padding: 10px;
+}
+
+button {
+  border: none;
+  background-color: white;
+}
+
+.btns {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #060d13;
+        transition: all 0.3s ease-out;
+    }
+
+    .btns:hover,
+    .btns:hover {
+        background: #060d13;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+</style>
