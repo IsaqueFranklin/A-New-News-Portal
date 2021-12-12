@@ -10,7 +10,7 @@ require('../models/admin')
 const Admin = mongoose.model('admins')
 
 require('../models/posts')
-const post = mongoose.model('posts')
+const Post = mongoose.model('posts')
 
 router.get('/singup', (req, res) => {
     res.render('admin/singup')
@@ -110,7 +110,7 @@ router.post('/publish', (req, res)=>{
     }
 
     if(!req.body.titulo || typeof req.body.titulo == undefined || req.body.titulo == null){
-        erros.push({texto: 'Titulo inválido.'})
+        erros.push({texto: 'Post inválido.'})
     }
 
     if(erros.length > 0){
@@ -120,14 +120,14 @@ router.post('/publish', (req, res)=>{
             conteudo: req.body.editor,
             autor: req.user.nome,
             titulo: req.body.titulo,
-            data: req.body.data,
+            //data: req.body.data,
             thumb: req.body.thumb,
         };
 
-        new Post(novoPost).save().then(() => {
+        new Post(novoPost).save().then(function(){
             req.flash('success_msg', 'Postado!');
             res.redirect('/');
-        }).catch(()=>{
+        }).catch(function(){
             req.flash('error_msg', 'Houve um erro!');
             res.redirect('/admin/publicar');
         })
