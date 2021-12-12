@@ -9,6 +9,8 @@ const passport = require('passport')
 require('../models/admin')
 const Admin = mongoose.model('admins')
 
+require('../models/posts')
+const post = mongoose.model('posts')
 
 router.get('/singup', (req, res) => {
     res.render('admin/singup')
@@ -94,6 +96,42 @@ router.get('/logout', function(req, res){
     req.logout()
     req.flash('success_msg', 'Deslogado com sucesso.')
     res.redirect('/')
+})
+
+router.get('/publish', (req, res)=>{
+    res.render('admin/publish')
+})
+
+router.post('/publish', (req, res)=>{
+    var erros = []
+
+    if(!req.body.editor || typeof req.body.editor == undefined || req.body.editor == null){
+        erros.push({texto: 'Post inválido.'})
+    }
+
+    if(!req.body.titulo || typeof req.body.titulo == undefined || req.body.titulo == null){
+        erros.push({texto: 'Titulo inválido.'})
+    }
+
+    if(erros.length > 0){
+        res.render('admin/publish', {erros: erros})
+    }else{
+        const novoPost = {
+            conteudo: req.body.editor,
+            autor: req.user.nome,
+            titulo: req.body.titulo,
+            data: req.body.data,
+            thumb: req.body.thumb,
+        };
+
+        new Post(novoPost).save().then(() => {
+            req.flash('success_msg', 'Postado!');
+            res.redirect('/');
+        }).catch(()=>{
+            req.flash('error_msg', 'Houve um erro!');
+            res.redirect('/admin/publicar');
+        })
+    }
 })
 
 module.exports = router
