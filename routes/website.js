@@ -16,7 +16,7 @@ const passport = require('passport')
 
 
 router.get('/ler/:id', (req, res)=>{
-    Post.findOne({_id: req.params.id}).lean().populate('post').then((posts)=>{
+    Post.findOne({_id: req.params.id}).lean().then((posts)=>{
             res.render('website/ler', {posts: posts})
         
     })
