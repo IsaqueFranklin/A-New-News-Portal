@@ -27,16 +27,16 @@
 <div class="container-sm">
   <div class="links cont">
   <br>
-  <div class="links">
+  <div class="">
     <h7 class="title" align="center">Posts recentes</h7>
   </div>
   <br>
   <br>
   {{#each post}}
-    
-    <div class="card mb-3 borda">
+    <a href="/website/ler/{{titulo}}" class="href">
+    <div class="card effect borda">
         <div class="row no-gutters">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <img src="{{thumb}}" class="card-img ig" alt="thumbnail">
             </div>
             <div class="card-body">
@@ -49,10 +49,10 @@
             
         </div>
     </div>
-    
+    </a>
   {{/each}}
   <br>
-  <h7 class="text center">Veja todos os posts do <a href="/website/blog">Austrália Estúdios</a></h7>
+  <h7 class="text center">Veja todos os posts do <a href="/">News Portal</a></h7>
   <br>
   <br>
   </div>
@@ -60,11 +60,25 @@
 
 <style>
 
-    a {
+    .href {
         text-decoration: none;
         text-decoration-color: transparent;
         padding: 0px;
         margin: 0px;
+        color: black;
+    }
+
+    .href:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    .effect {
+        transition: 0.5s;
+    }
+
+    .effect:hover {
+        transform: scale(1.05);
     }
 
     .total {
@@ -126,7 +140,7 @@
 @media (max-width: 768px) {
     .links {
         padding: 0px;
-        margin-top: 10px;
+        margin-top: 100px;
         margin-left: 30px;
         margin-right: 30px;
     }
@@ -156,9 +170,10 @@
     }
 
     .borda {
-      margin-left: 5px;
-      margin-right: 5px;
-      height: 150px;
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 370px;
+      width: 100%;
     }
 }
 
@@ -167,8 +182,8 @@
     .links {
         padding: 0px;
         margin-top: 10px;
-        margin-left: 200px;
-        margin-right: 200px;
+        margin-left: 70px;
+        margin-right: 70px;
     }
 
     .inlinks {
