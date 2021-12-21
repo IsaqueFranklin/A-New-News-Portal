@@ -15,10 +15,11 @@ const bcrypt = require('bcryptjs')
 const passport = require('passport')
 
 
-router.get('/ler/:id', (req, res)=>{
-    Post.findOne({_id: req.params.id}).lean().then((posts)=>{
-            res.render('website/ler', {posts: posts})
-        
+router.get('/ler/:titulo', (req, res)=>{
+    Post.findOne({titulo: req.params.titulo}).lean().then((posts)=>{
+        Post.find().lean().sort({_id: -1}).limit(3).then((post)=>{
+            res.render('website/ler', {posts: posts, post: post})
+        })
     })
 })
 

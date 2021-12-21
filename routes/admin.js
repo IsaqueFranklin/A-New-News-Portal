@@ -122,13 +122,13 @@ router.post('/publish', eUser, (req, res)=>{
             conteudo: req.body.editor,
             autor: req.user.nome,
             titulo: req.body.titulo,
-            //data: req.body.data,
+            data: req.body.data,
             thumb: req.body.thumb,
         };
 
         new Post(novoPost).save().then(function(){
             req.flash('success_msg', 'Postado!');
-            res.redirect('/');
+            res.redirect('/admin/painel');
         }).catch(function(){
             req.flash('error_msg', 'Houve um erro!');
             res.redirect('/admin/publicar');
