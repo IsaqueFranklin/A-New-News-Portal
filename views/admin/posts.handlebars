@@ -1,0 +1,232 @@
+<link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amethysta&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Maitree&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&display=swap" rel="stylesheet">
+
+<meta name="description"
+  content="Veja toda as publicações mais recentes. Crie seu blog e comece a compartilhar seu conteúdo gratuitamente.">
+
+  <div class="card center pos">
+    <div class="card-body">
+      <img src="img/logo3.png">
+      <br>
+      <h2 class="title">Painel de controle</h2>
+      <hr>
+      <a href="/admin/publicar"><button class="btns3">Publicar</button></a>
+      <a href="/admin/painelpodcasts"><button class="btns">Podcasts</button></a>
+      <a href="/"><button class="btns">Home</button></a>
+      <a href="/admin/logout"><button class="btns2">Sair</button></a>
+      <br>
+      <br>
+    </div>
+  </div>
+
+    {{#each posts}}
+    <br>
+    <div class="card borda border-light center">
+        <div class="card-body">
+          <br>
+          <small class="card-text">Publicado em {{data}}</small>
+          <br>
+          <br>
+          <h7 class="title2">{{titulo}}</h7>
+          <br>
+          <br>
+          <a href="/admin/editarpost/{{_id}}"><button class="btns2">Editar</button></a>
+          <a href="/website/ler/{{_id}}" class=""><button class="btns">Ler mais</button></a>
+          <br>
+          <br>
+        </div>
+    </div>
+    <br>
+    {{/each}}
+
+    <br>
+    <br>
+
+<style>
+  .marker {
+    background-color: Yellow;
+  }
+
+  .pos {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+  }
+
+  .btns {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #90EE90;
+        transition: all 0.3s ease-out;
+    }
+
+    .btns:hover,
+    .btns:hover {
+        background: #90EE90;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+
+  .btns2 {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #ff5050;
+        transition: all 0.3s ease-out;
+    }
+
+    .btns2:hover,
+    .btns2:hover {
+        background: #ff5050;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+
+  .btns3 {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #0d0d0d;
+        transition: all 0.3s ease-out;
+    }
+
+    .btns3:hover,
+    .btns3:hover {
+        background: #0d0d0d;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+
+  .lop {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .title {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 30px;
+  }
+
+  .title2 {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 20px;
+  }
+
+  .text {
+    font-family: 'Slabo 27px', serif;
+    font-size: 15px;
+  }
+
+
+  .di {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  button {
+    border: none;
+    background-color: white;
+  }
+
+  .dog {
+    width: 600px;
+  }
+
+  .bm {
+    text-transform: initial;
+    text-decoration: none;
+    color: #006600;
+  }
+
+  @media (min-width: 1200px) {
+
+    .diu {
+      margin-left: 300px;
+      margin-right: 300px;
+    }
+
+    .ig {
+      height: 150px;
+      margin-bottom: 0px;
+    }
+
+    .borda {
+      margin-left: 150px;
+      margin-right: 150px;
+      height: 200px;
+    }
+
+  }
+
+  @media (min-width: 1000px) and (max-width: 1200px) {
+
+    .diu {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    .borda {
+      margin-left: 150px;
+      margin-right: 150px;
+      height: 200px;
+    }
+
+    .ig {
+      height: 150px;
+      margin-bottom: 0px;
+    }
+
+  }
+
+  @media (min-width: 768px) and (max-width: 1000px){
+
+    .ig {
+      height: 150px;
+      margin-bottom: 0px;
+    }
+
+    .borda {
+      margin-left: 50px;
+      margin-right: 50px;
+      height: 200px;
+    }
+
+  }
+
+@media (min-width: 700px) amd (max-width: 800px){
+  .ig {
+    height: 300px;
+    margin-bottom: 0px;
+  }
+
+}
+  @media (max-width: 800px) {
+
+    .diu {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+
+    .borda {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+
+    .borda2 {
+      margin-right: 0px;
+      margin-left: 0px;
+      padding: 0px;
+      margin-top: 0px;
+    }
+
+  }
+
+  img {
+    height: 200px;
+    width: 200px;
+  }
+</style>

@@ -1,0 +1,248 @@
+<link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amethysta&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Maitree&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+
+<meta name="description"
+  content="Leia o post {{posts.titulo}} de {{posts.autor}} publicado em {{posts.data}}.">
+<div class="card dog">
+  <div class="card-body justify di">
+    <br>
+    <p class="text diu">Publicado em {{posts.data}} por <a href="/website/blog">{{posts.autor}}</a></p>
+    <br>
+    <h5 class="title diu">{{posts.titulo}}</h5>
+    <br>
+    <div class='center total'>
+      <img src='{{posts.thumb}}' alt='imagem de capa do post' class='igk' />
+      <br>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div align="justify" class="diu">
+      {{{posts.conteudo}}}
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+<div class="card center lop2">
+  <div class="card-body">
+  <br>
+  <h7 class="title" align="center">Posts recentes</h7>
+  <br>
+  <br>
+  {{#each post}}
+    <div class="card mb-3 borda border-light">
+      <div class="row no-gutters">
+        <div class="col-md-2">
+          <img src="{{thumb}}" class="card-img ig" alt="thumbnail">
+        </div>
+        <div class="card-body">
+          <small class="card-text">Publicado em {{data}}</small>
+          <br>
+          <h7 class="title2">{{titulo}}</h7>
+          <br>
+          <p class="text2">Escrito por {{autor}}</p>
+          <a href="/website/ler/{{_id}}" class=""><button class="btns">Ler mais</button></a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  <br>
+  <h7 class="text center">Veja todos os posts do <a href="/website/blog">Austrália Estúdios</a></h7>
+  <br>
+  <br>
+  </div>
+  </div>
+
+<style>
+  .total {
+    width: 100%;
+  }
+
+  .igk {
+    width: 1000000px;
+    height: 600px;
+  }
+
+  .marker {
+    background-color: Yellow;
+  }
+
+  .btns {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #060d13;
+        transition: all 0.3s ease-out;
+    }
+
+    .btns:hover,
+    .btns:hover {
+        background: #060d13;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+
+  .lop {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .di {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .dog {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .title {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 30px;
+  }
+
+  .title2 {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 18px;
+  }
+
+  .text {
+    font-family: 'Teko', sans-serif;
+    font-size: 20px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Big Shoulders Display', cursive;
+  }
+
+  .lop2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+
+
+
+@media (min-width: 1200px) {
+
+    .diu {
+      margin-left: 300px;
+      margin-right: 300px;
+    }
+
+    .ig {
+      height: 150px;
+      margin-bottom: 0px;
+    }
+
+    .borda {
+      margin-left: 150px;
+      margin-right: 150px;
+      height: 150px;
+    }
+
+    img {
+      max-width: 670px;
+      align-self: center;
+    }
+
+  }
+
+  @media (min-width: 1000px) and (max-width: 1200px) {
+
+    .diu {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    .borda {
+      margin-left: 150px;
+      margin-right: 150px;
+      height: 150px;
+    }
+
+    .ig {
+      height: 150px;
+      margin-bottom: 0px;
+    }
+
+    img {
+      max-width: 650px;
+      align-self: center;
+    }
+
+  }
+
+  @media (min-width: 768px) and (max-width: 1000px){
+
+    .ig {
+      height: 150px;
+      margin-bottom: 0px;
+    }
+
+    .borda {
+      margin-left: 50px;
+      margin-right: 50px;
+      height: 150px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+  }
+
+@media (min-width: 700px) and (max-width: 800px){
+
+  img {
+    max-width: 100%;
+  }
+}
+  @media (max-width: 800px) {
+
+    .diu {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+
+    .borda {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+
+    .borda2 {
+      margin-right: 0px;
+      margin-left: 0px;
+      padding: 0px;
+      margin-top: 0px;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 220px;
+      align: center;
+    }
+
+    .ig {
+      width: 100%;
+    }
+
+  }
+
+
+
+
+
+
+
+</style>

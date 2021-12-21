@@ -5,12 +5,14 @@ const mongoose = require('mongoose')
 
 const bcrypt = require('bcryptjs')
 const passport = require('passport')
+const { eUser } = require('../helpers/eUser')
 
 require('../models/admin')
 const Admin = mongoose.model('admins')
 
 require('../models/posts')
 const Post = mongoose.model('posts')
+
 
 router.get('/singup', (req, res) => {
     res.render('admin/singup')
@@ -92,17 +94,17 @@ router.post('/login', function(req, res, next) {
     })(req, res, next)
 })
 
-router.get('/logout', function(req, res){
+router.get('/logout', eUser, function(req, res){
     req.logout()
     req.flash('success_msg', 'Deslogado com sucesso.')
     res.redirect('/')
 })
 
-router.get('/publish', (req, res)=>{
+router.get('/publish', eUser, (req, res)=>{
     res.render('admin/publish')
 })
 
-router.post('/publish', (req, res)=>{
+router.post('/publish', eUser, (req, res)=>{
     var erros = []
 
     if(!req.body.editor || typeof req.body.editor == undefined || req.body.editor == null){
@@ -132,6 +134,12 @@ router.post('/publish', (req, res)=>{
             res.redirect('/admin/publicar');
         })
     }
+})
+
+router.get('/painel', eUser, (req, res)=>{
+    Post.find({ autor: req.user.nome }).sort({_id: -1}).lean().then((posts)=>{
+        res.render('admin/posts', {posts: posts})
+    })
 })
 
 module.exports = router
