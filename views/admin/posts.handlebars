@@ -1,59 +1,85 @@
-<link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Amethysta&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Maitree&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&display=swap" rel="stylesheet">
-
 <meta name="description"
   content="Veja toda as publicações mais recentes. Crie seu blog e comece a compartilhar seu conteúdo gratuitamente.">
 
-  <div class="card center pos">
+<div class="container-sm">
+  <div class="links cont">
+    <br>
+    <br>
+
+  <div class="card center">
     <div class="card-body">
       <img src="img/logo3.png">
       <br>
       <h2 class="title">Painel de controle</h2>
       <hr>
       <a href="/admin/publicar"><button class="btns3">Publicar</button></a>
-      <a href="/admin/painelpodcasts"><button class="btns">Podcasts</button></a>
       <a href="/"><button class="btns">Home</button></a>
       <a href="/admin/logout"><button class="btns2">Sair</button></a>
       <br>
       <br>
     </div>
   </div>
+</div>
+</div>
 
-    {{#each posts}}
-    <br>
-    <div class="card borda border-light center">
-        <div class="card-body">
-          <br>
-          <small class="card-text">Publicado em {{data}}</small>
-          <br>
-          <br>
-          <h7 class="title2">{{titulo}}</h7>
-          <br>
-          <br>
-          <a href="/admin/editarpost/{{_id}}"><button class="btns2">Editar</button></a>
-          <a href="/website/ler/{{titulo}}" class=""><button class="btns">Ler mais</button></a>
-          <br>
-          <br>
+<div class="container-sm">
+  <div class="links cont">
+  <br>
+  <div class="">
+    <h7 class="title" align="center">Seus posts</h7>
+  </div>
+  <br>
+  <br>
+  {{#each posts}}
+    <a href="/website/ler/{{titulo}}" class="href">
+    <div class="card effect borda">
+        <div class="row no-gutters">
+            <div class="col-md-3">
+                <img src="{{thumb}}" class="card-img ig" alt="thumbnail">
+            </div>
+            <div class="card-body">
+                <small class="card-text">Publicado em {{data}}</small>
+                <br>
+                <h7 class="title2">{{titulo}}</h7>
+                <br>
+                <p class="text2">Escrito por {{autor}}</p>
+            </div>
+            
         </div>
     </div>
-    <br>
-    {{/each}}
+    </a>
+  {{/each}}
+  <br>
+  <br>
+  </div>
+</div>
 
-    <br>
-    <br>
 
 <style>
   .marker {
     background-color: Yellow;
   }
 
-  .pos {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-  }
+  .href {
+        text-decoration: none;
+        text-decoration-color: transparent;
+        padding: 0px;
+        margin: 0px;
+        color: black;
+    }
+
+    .href:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    .effect {
+        transition: 0.5s;
+    }
+
+    .effect:hover {
+        transform: scale(1.05);
+    }
 
   .btns {
         background-color: transparent;
@@ -106,17 +132,14 @@
   }
 
   .title {
-    font-family: 'Big Shoulders Display', cursive;
     font-size: 30px;
   }
 
   .title2 {
-    font-family: 'Big Shoulders Display', cursive;
     font-size: 20px;
   }
 
   .text {
-    font-family: 'Slabo 27px', serif;
     font-size: 15px;
   }
 
@@ -141,89 +164,115 @@
     color: #006600;
   }
 
-  @media (min-width: 1200px) {
+@media (max-width: 768px) {
+    .links {
+        padding: 0px;
+        margin-top: 100px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 
-    .diu {
-      margin-left: 300px;
-      margin-right: 300px;
+    .inlinks {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 8px;
     }
 
     .ig {
-      height: 150px;
-      margin-bottom: 0px;
+        height: 200px;
+        width: 150px;
+        border-radius: 8px;
+        align-items: center;
+    }
+
+    .alig {
+        align-items: center;
     }
 
     .borda {
-      margin-left: 150px;
-      margin-right: 150px;
-      height: 200px;
-    }
-
-  }
-
-  @media (min-width: 1000px) and (max-width: 1200px) {
-
-    .diu {
-      margin-left: 100px;
-      margin-right: 100px;
-    }
-
-    .borda {
-      margin-left: 150px;
-      margin-right: 150px;
-      height: 200px;
-    }
-
-    .ig {
-      height: 150px;
-      margin-bottom: 0px;
-    }
-
-  }
-
-  @media (min-width: 768px) and (max-width: 1000px){
-
-    .ig {
-      height: 150px;
-      margin-bottom: 0px;
-    }
-
-    .borda {
-      margin-left: 50px;
-      margin-right: 50px;
-      height: 200px;
-    }
-
-  }
-
-@media (min-width: 700px) amd (max-width: 800px){
-  .ig {
-    height: 300px;
-    margin-bottom: 0px;
-  }
-
-}
-  @media (max-width: 800px) {
-
-    .diu {
-      margin-left: 25px;
-      margin-right: 25px;
-    }
-
-    .borda {
-      margin-right: 5px;
-      margin-left: 5px;
-    }
-
-
-    .borda2 {
-      margin-right: 0px;
-      margin-left: 0px;
+      margin-bottom: 50px;
       padding: 0px;
-      margin-top: 0px;
+      height: 370px;
+      width: 100%;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .links {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 70px;
+        margin-right: 70px;
     }
 
-  }
+    .inlinks {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    img {
+        max-height: 300px;
+        max-width: 400px;
+        border-radius: 8px;
+    }
+
+    .ig {
+        height: 120px;
+        width: 150px;
+        border-radius: 8px;
+    }
+
+    .borda {
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 120px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .links {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .inlinks {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    .ig {
+        height: 120px;
+        width: 170px;
+        border-radius: 8px;
+    }
+
+    .borda {
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 120px;
+      width: 100%;
+    }
+}
 
   img {
     height: 200px;
