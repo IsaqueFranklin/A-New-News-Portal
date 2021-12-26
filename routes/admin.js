@@ -142,4 +142,43 @@ router.get('/painel', eUser, (req, res)=>{
     })
 })
 
+router.get('/excluir/:id', eUser, (req, res)=>{
+    Post.remove({_id: req.params.id}).lean().then(()=>{
+        req.flash('success_msg', 'Deletado com sucesso.')
+        res.redirect('/admin/painel')
+    }).catch((err)=>{
+        req.flash('error_msg', 'Houve um erro ao deletar.')
+        res.redirect('/admin/painel')
+    })
+})
+
+router.get('/editar/:id', eUser, (req, res)=>{
+    Post.findOne({_id: req.params.id}).lean().then((posts)=>{
+        res.render('admin/editar', {posts: posts})
+    }).catch((err)=>{
+        req.flash('error_msg', 'Houve algum erro.')
+        res.redirect('/admin/painel')
+    })
+})
+
+router.post('/editing', eUser, (req, res)=>{
+    Post.findOne({_id: req.body.id}).then((posts)=>{
+        posts.titulo = req.body.titulo;
+        posts.conteudo = req.body.editor;
+        posts.thumb = req.body.thumb;
+        posts.data = req.body.data;
+
+        posts.save().lean().then(()=>{
+            req.flash('success_msg', 'Perfil editado com sucesso.')
+            res.redirect('/admin/painel')
+        }).catch((err)=>{
+            req.flash('error_msg', 'Erro interno')
+            res.redirect('/admin/painel')
+        })
+    }).catch((err)=>{
+        req.flash('error_msg', 'Houve um erro ao salvar a edição.')
+        res.redirect('/admin/painel')
+    })
+})
+
 module.exports = router

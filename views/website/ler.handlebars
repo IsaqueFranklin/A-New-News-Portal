@@ -1,10 +1,17 @@
-
-
 <meta name="description" content="Leia o post {{posts.titulo}} de {{posts.autor}} publicado em {{posts.data}}.">
 
 <div class="container-sm">
     <div class="links cont">
     <br>
+    {{#if user}}
+        <br>
+        <a href="/admin/editar/{{posts._id}}"><button class="btns">Editar</button></a>
+        <a href="/admin/excluir/{{posts._id}}"><button class="btns">Deletar</button></a>
+        <br>
+        <br>
+        <br>
+    {{else}}
+    {{/if}}
     <p class="text">Publicado em {{posts.data}} por <a href="/website/blog">{{posts.autor}}</a></p>
     <br>
     <h5 class="title">{{posts.titulo}}</h5>
@@ -39,7 +46,7 @@
             <div class="col-md-3">
                 <img src="{{thumb}}" class="card-img ig" alt="thumbnail">
             </div>
-            <div class="card-body col-md-3">
+            <div class="card-body">
                 <small class="card-text">Publicado em {{data}}</small>
                 <br>
                 <h7 class="card-title title2">{{titulo}}</h7>

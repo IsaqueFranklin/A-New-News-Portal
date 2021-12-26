@@ -1,0 +1,108 @@
+<div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-xl w-full space-y-8">
+    <div>
+      <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        Nova publicação
+      </h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+          Escreva sua nova publicação adicionando imagens, marcadores, links e várias outras coisas
+        divertidas. :)
+        </a>
+      </p>
+    </div>
+    <form class="mt-8 space-y-6" action="/admin/editing" method="post">
+      <input type="hidden" name="remember" value="true">
+      <div class="rounded-md shadow-sm -space-y-px">
+        <div>
+            <input type="hidden" name="id" value="{{posts._id}}"></input>
+            <label for="data" class="font-medium text-indigo-600 hover:text-indigo-500">Data</label>
+            <input type="text" name="data" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Data de publicação no formato xx/xx/xxxx" value="{{posts.data}}"></input>
+        </div>
+        <br>
+        <div>
+            <label for="title" class="font-medium text-indigo-600 hover:text-indigo-500">Título</label>
+            <input type="text" name="titulo" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Título para ser exibido" value="{{posts.titulo}}"></input>
+        </div>
+        <br>
+        <div>
+            <label for="thumb" class="font-medium text-indigo-600 hover:text-indigo-500">Thumb</label>
+            <input type="text" name="thumb" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Link da imagem de capa" value="{{posts.thumb}}"></input>
+        </div>
+        <br>
+        <div>
+            <label for="editor" class="font-medium text-indigo-600 hover:text-indigo-500">Conteúdo</label>
+            <textarea name="editor" id="editor" class="textarea">{{posts.conteudo}}</textarea>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <!-- Heroicon name: solid/lock-closed -->
+            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          Editar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="ckeditor/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace('editor');
+  config.htmlEncodeOutput = true;
+  var data = CKEDITOR.instances.coment.getData()
+
+
+</script>
+
+<style>
+  .lop {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .butao {
+    border-radius: 5px;
+    text-transform: initial;
+    background-color: #90EE90;
+    border: 5px;
+    color:black;
+    font-size: 15px;
+    height: 40px;
+    width: 85px;
+  }
+
+
+  .textarea {
+    height: 800px;
+  }
+
+  .ig {
+    height: 200px;
+    width: 200px;
+  }
+
+  @media(min-width: 1000px){
+    .di {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 150px;
+    margin-top: 150px;
+  }
+  }
+
+  @media(max-width: 1000px){
+    .di {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  }
+</style>
