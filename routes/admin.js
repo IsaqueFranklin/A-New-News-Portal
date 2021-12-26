@@ -7,6 +7,8 @@ const bcrypt = require('bcryptjs')
 const passport = require('passport')
 const { eUser } = require('../helpers/eUser')
 
+const moment = require('moment')
+
 require('../models/admin')
 const Admin = mongoose.model('admins')
 
@@ -118,11 +120,16 @@ router.post('/publish', eUser, (req, res)=>{
     if(erros.length > 0){
         res.render('admin/publish', {erros: erros})
     }else{
+
+        let now = new Date();
+
+        var dateString = moment(now).format('DD/MM/YYYY');
+
         const novoPost = {
             conteudo: req.body.editor,
             autor: req.user.nome,
             titulo: req.body.titulo,
-            data: req.body.data,
+            data: dateString,
             thumb: req.body.thumb,
         };
 
@@ -166,7 +173,6 @@ router.post('/editing', eUser, (req, res)=>{
         posts.titulo = req.body.titulo;
         posts.conteudo = req.body.editor;
         posts.thumb = req.body.thumb;
-        posts.data = req.body.data;
 
         posts.save().lean().then(()=>{
             req.flash('success_msg', 'Perfil editado com sucesso.')
