@@ -66,7 +66,9 @@ app.use('/admin', admin)
 
 app.get('/', (req, res) => {
     Post.find().sort({_id: -1}).lean().then((posts)=>{
-        res.render('index', {posts: posts})
+        Post.find().sort({_id: -1}).limit(5).lean().then((post)=>{
+            res.render('index', {posts: posts, post: post})
+        })
     })
 })
 
