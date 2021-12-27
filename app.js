@@ -11,6 +11,8 @@ const admin = require('./routes/admin')
 const passport = require('passport')
 require('./config/auth')(passport)
 
+require('./models/posts')
+const Post = mongoose.model('posts')
 
 //Config
 
@@ -63,7 +65,9 @@ app.use('/website', website)
 app.use('/admin', admin)
 
 app.get('/', (req, res) => {
-    res.render('index')
+    Post.find().sort({_id: -1}).lean().then((posts)=>{
+        res.render('index', {posts: posts})
+    })
 })
 
 //Starting server
