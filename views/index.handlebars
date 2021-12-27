@@ -5,6 +5,8 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -18,16 +20,16 @@
       </div>
     </div>
     {{#each post}}
-    <a href="/website/ler/{{titulo}}" class="href effect">
     <div class="carousel-item">
+      <a href="/website/ler/{{titulo}}" class="href effect"></a>
       <img class="d-block w-100 ili" src="{{thumb}}" alt="First slide">
       <div class="carousel-caption" align="justify">
         <p class="text">Publicado em {{data}}</p>
         <h1 class="title">{{titulo}}</h1>
         <p class="text">Escrito por {{autor}}</p>
       </div>
+      </a>
     </div>
-    </a>
     {{/each}}
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
