@@ -18,6 +18,7 @@
       </div>
     </div>
     {{#each post}}
+    <a href="/website/ler/{{titulo}}" class="href effect">
     <div class="carousel-item">
       <img class="d-block w-100 ili" src="{{thumb}}" alt="First slide">
       <div class="carousel-caption" align="justify">
@@ -26,6 +27,7 @@
         <p class="text">Escrito por {{autor}}</p>
       </div>
     </div>
+    </a>
     {{/each}}
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -39,6 +41,7 @@
 </div>
 <div class="container-sm">
   <div class="links cont">
+    <br>
   <div class="">
     <h7 class="title" align="center">Recentes</h7>
   </div>
@@ -54,7 +57,7 @@
             <div class="card-body">
                 <small class="card-text">Publicado em {{data}}</small>
                 <br>
-                <h7 class="title2">{{titulo}}</h7>
+                <h7 class="">{{titulo}}</h7>
                 <br>
                 <p class="text2">Escrito por {{autor}}</p>
             </div>
@@ -142,6 +145,14 @@
 
     .ma {
       margin-bottom: 100px;
+    }
+
+    .title2 {
+      font-size: 20px;
+    }
+
+    .text2 {
+      font-size: 15px;
     }
 
 
