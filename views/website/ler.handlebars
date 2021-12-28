@@ -41,12 +41,12 @@
   <br>
   {{#each post}}
     <a href="/website/ler/{{titulo}}" class="href">
-    <div class="card effect borda">
+    <div class="effect borda">
         <div class="row no-gutters">
             <div class="col-md-3">
                 <img src="{{thumb}}" class="card-img ig" alt="thumbnail">
             </div>
-            <div class="card-body">
+            <div class="ko">
                 <small class="card-text">Publicado em {{data}}</small>
                 <br>
                 <h7 class="card-title">{{titulo}}</h7>
@@ -79,6 +79,10 @@
         text-decoration: none;
         color: black;
     }
+
+    .ko {
+    margin: 20px;
+  }
 
     .effect {
         transition: 0.5s;

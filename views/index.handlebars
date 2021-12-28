@@ -51,12 +51,12 @@
   <br>
   {{#each posts}}
     <a href="/website/ler/{{titulo}}" class="href">
-    <div class="card effect borda">
+    <div class=" effect borda">
         <div class="row no-gutters">
             <div class="col-md-3">
                 <img src="{{thumb}}" class="card-img ig" alt="thumbnail">
             </div>
-            <div class="card-body">
+            <div class="ko">
                 <small class="card-text">Publicado em {{data}}</small>
                 <br>
                 <h7 class="">{{titulo}}</h7>
@@ -77,6 +77,10 @@
 <style>
   .carousel-item {
     width: 100%;
+  }
+
+  .ko {
+    margin: 20px;
   }
 
   .href {
