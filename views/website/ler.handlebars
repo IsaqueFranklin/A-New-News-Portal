@@ -40,7 +40,7 @@
   <br>
   <br>
   {{#each post}}
-    <a href="/website/ler/{{titulo}}" class="href">
+    <a href="/website/ler/{{_id}}" class="href">
     <div class="effect borda">
         <div class="row no-gutters">
             <div class="col-md-3">
@@ -253,7 +253,7 @@
     .borda {
       margin-bottom: 50px;
       padding: 0px;
-      height: 120px;
+      min-height: 120px;
       width: 100%;
     }
 }

@@ -10,17 +10,17 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100  ili ilireverse" src="https://images.unsplash.com/photo-1524275804141-5e9f2bc5a71d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="First slide">
+      <img class="d-block w-100  ili" src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="First slide">
       <div class="carousel-caption ma">
-        <h1 class="title">Nautilus News</h1>
-        <p class="text">Seu portal de notícias</p>
+        <h1 class="title">Notícias</h1>
+        <p class="text">Veja todas as notícias</p>
         <br>
         <br>
         <br>
         <br>
       </div>
     </div>
-    {{#each post}}
+    {{#each posts}}
     <div class="carousel-item">
       <a href="/website/ler/{{titulo}}" class="href effect">
       <img class="d-block w-100 ili" src="{{thumb}}" alt="First slide">
@@ -69,8 +69,6 @@
     </div>
     </a>
   {{/each}}
-  <a href="/website/artigos"><button class="btns3">Todas as matérias</button></a>
-  <br>
   <br>
   </div>
   <hr>
@@ -80,10 +78,6 @@
 <style>
   .carousel-item {
     width: 100%;
-  }
-
-  .ilireverse {
-    filter: brightness(300%);
   }
 
   .ko {
