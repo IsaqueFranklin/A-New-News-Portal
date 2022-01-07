@@ -22,7 +22,7 @@
     </div>
     {{#each post}}
     <div class="carousel-item">
-      <a href="/website/ler/{{titulo}}" class="href effect">
+      <a href="/website/ler/{{_id}}" class="href effect">
       <img class="d-block w-100 ili" src="{{thumb}}" alt="First slide">
       <div class="carousel-caption" align="justify">
         <p class="text">Publicado em {{data}}</p>
@@ -70,7 +70,7 @@
     </a>
   {{/each}}
   <br>
-  <a href="/website/artigos"><button class="btns3">Todas as matérias</button></a>
+  <h7 class="text3 center">Veja todos os posts da <a href="/website/artigos">Nautilus</a></h7>
   <br>
   <br>
   <br>
@@ -168,6 +168,10 @@
 
     .text2 {
       font-size: 15px;
+    }
+
+    .text3 {
+      font-size: 20px;
     }
 
 
