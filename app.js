@@ -72,7 +72,7 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/artigos', (req, res)=>{
+app.get('/Artigo', (req, res)=>{
     Post.find({category: 'Artigo'}).sort({_id: -1}).limit(20).lean().then((posts)=>{
         Post.find({category: "Artigo"}).sort({_id: -1}).limit(5).then().then((post)=>{
             res.render('website/artigos', {posts: posts, post: post})
@@ -80,7 +80,7 @@ app.get('/artigos', (req, res)=>{
     })
 })
 
-app.get('/noticias', (req, res)=>{
+app.get('/Noticia', (req, res)=>{
     Post.find({category: 'Noticia'}).sort({_id: -1}).limit(20).lean().then((posts)=>{
         Post.find({category: "Noticia"}).sort({_id: -1}).limit(5).then().then((post)=>{
             res.render('website/noticias', {posts: posts, post: post})
@@ -88,7 +88,7 @@ app.get('/noticias', (req, res)=>{
     })
 })
 
-app.get('/literatura', (req, res)=>{
+app.get('/Literatura', (req, res)=>{
     Post.find({category: 'Literatura'}).sort({_id: -1}).limit(20).lean().then((posts)=>{
         Post.find({category: "Literatura"}).sort({_id: -1}).limit(5).then().then((post)=>{
             res.render('website/literatura', {posts: posts, post: post})
@@ -96,7 +96,7 @@ app.get('/literatura', (req, res)=>{
     })
 })
 
-app.get('/economia', (req, res)=>{
+app.get('/Economia', (req, res)=>{
     Post.find({category: 'Economia'}).sort({_id: -1}).limit(20).lean().then((posts)=>{
         Post.find({category: "Economia"}).sort({_id: -1}).limit(5).then().then((post)=>{
             res.render('website/economia', {posts: posts, post: post})
@@ -104,7 +104,7 @@ app.get('/economia', (req, res)=>{
     })
 })
 
-app.get('/tecnologia', (req, res)=>{
+app.get('/Tecnologia', (req, res)=>{
     Post.find({category: 'Tecnologia'}).sort({_id: -1}).limit(20).lean().then((posts)=>{
         Post.find({category: "Tecnologia"}).sort({_id: -1}).limit(5).then().then((post)=>{
             res.render('website/tecnologia', {posts: posts, post: post})
@@ -112,7 +112,7 @@ app.get('/tecnologia', (req, res)=>{
     })
 })
 
-app.get('/empreededorismo', (req, res)=>{
+app.get('/Empreededorismo', (req, res)=>{
     Post.find({category: 'Empreendedorismo'}).sort({_id: -1}).limit(20).lean().then((posts)=>{
         Post.find({category: "Empreendedorismo"}).sort({_id: -1}).limit(5).then().then((post)=>{
             res.render('website/empreededorismo', {posts: posts, post: post})
