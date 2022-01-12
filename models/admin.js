@@ -17,6 +17,10 @@ const Admin = new Schema({
         required: true,
     },
 
+    bio: {
+        type: String
+    },
+
     eAdmin: {
         type: Number,
         default: 1,

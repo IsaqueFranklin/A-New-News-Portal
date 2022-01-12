@@ -1,0 +1,211 @@
+<div class="container-sm">
+    <div class="links">
+        <div class="space">
+            <h5 class="title2">{{users.nome}}</h5>
+            <br>
+            <p class="text2">{{users.email}}</p>
+            <br>
+            <br>
+            <p class="text2">{{users.bio}}</p>
+            <br
+            <br>
+            {{#each posts}}
+            <a href="/website/ler/{{_id}}" class="href">
+            <div class="effect borda">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{thumb}}" class="card-img ig" alt="thumbnail">
+                    </div>
+                    <div class="ko">
+                        <small class="card-text">Publicado em {{data}}</small>
+                        <br>
+                        <h7 class="">{{titulo}}</h7>
+                        <br>
+                        <p class="text2">Escrito por {{autor}}</p>
+                    </div>
+                    
+                </div>
+            </div>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<style>
+    .space {
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+
+    .ko {
+    margin: 20px;
+  }
+
+     .href {
+        text-decoration: none;
+        text-decoration-color: transparent;
+        padding: 0px;
+        margin: 0px;
+        color: black;
+    }
+
+    .href:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    .effect {
+        transition: 0.5s;
+    }
+
+    .effect:hover {
+        transform: scale(1.05);
+    }
+
+    .title2 {
+      font-size: 30px;
+    }
+
+    .text2 {
+      font-size: 15px;
+    }
+
+    .text3 {
+      font-size: 20px;
+    }
+
+
+@media (max-width: 768px) {
+    .links {
+        padding: 0px;
+        margin-top: 100px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .title {
+    font-size: 25px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .ig {
+        height: 200px;
+        width: 150px;
+        border-radius: 8px;
+        align-items: center;
+    }
+
+    .alig {
+        align-items: center;
+    }
+
+    .borda {
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 370px;
+      width: 100%;
+    }
+
+    .ili {
+    height: 40%;
+    width: 100%;
+    border-radius: 0px;
+    filter: brightness(65%);
+  }
+}
+
+
+@media (min-width: 768px) {
+    .links {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .ig {
+        height: 120px;
+        width: 150px;
+        border-radius: 8px;
+    }
+
+    .borda {
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 120px;
+    }
+
+    .ili {
+      height: 70%;
+      min-width: 100%;
+      border-radius: 0px;
+      filter: brightness(65%);
+    }
+}
+
+@media (min-width: 1200px) {
+    .links {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    
+  .title {
+    font-size: 50px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+    .ig {
+        height: 120px;
+        width: 170px;
+        border-radius: 8px;
+    }
+
+    .borda {
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 120px;
+      width: 100%;
+    }
+
+    .ili {
+    height: 80%;
+    width: 100%;
+    border-radius: 0px;
+    filter: brightness(65%);
+  }
+}
+</style>
