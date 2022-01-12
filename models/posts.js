@@ -22,6 +22,10 @@ const Post = new Schema({
         type: String,
         required: true  
     },
+    category: {
+        type: String,
+        required: true
+    }
 })
 
 mongoose.model("posts", Post);

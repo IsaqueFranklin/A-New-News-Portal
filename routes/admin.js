@@ -131,6 +131,7 @@ router.post('/publish', eUser, (req, res)=>{
             titulo: req.body.titulo,
             data: dateString,
             thumb: req.body.thumb,
+            category: req.body.category
         };
 
         new Post(novoPost).save().then(function(){
