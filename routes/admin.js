@@ -188,4 +188,28 @@ router.post('/editing', eUser, (req, res)=>{
     })
 })
 
+router.get('/bio', eUser, (req, res)=>{
+    Admin.findOne({nome: req.user.nome}).lean().then((users)=>{
+        res.render('admin/bio', {users: users})
+    })
+})
+
+router.post('/bioedit', eUser, (req, res)=>{
+    Admin.findOne({nome: req.user.nome}).lean().then((users)=>{
+        users.nome = req.body.nome;
+        users.bio = req.body.bio;
+
+        users.save().lean().then(()=>{
+            req.flash('success_msg', 'Perfil editado com sucesso.')
+            res.redirect('/admin/painel')
+        }).catch((err)=>{
+            req.flash('error_msg', 'Erro interno')
+            res.redirect('/admin/bio')
+        })
+    }).catch((err)=>{
+        req.flash('error_msg', 'Houve um erro ao salvar a edição.')
+        res.redirect('/admin/bio')
+    })
+})
+
 module.exports = router
