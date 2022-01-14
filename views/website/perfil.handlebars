@@ -1,13 +1,15 @@
 <div class="container-sm">
     <div class="links">
         <div class="space">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="" class="igo" />
+            <br>
             <h5 class="title2">{{users.nome}}</h5>
             <br>
             <p class="text2">{{users.email}}</p>
+            <p class="text2">{{{users.bio}}}</p>
             <br>
+            <hr>
             <br>
-            <p class="text2">{{users.bio}}</p>
-            <br
             <br>
             {{#each posts}}
             <a href="/website/ler/{{_id}}" class="href">
@@ -40,6 +42,12 @@
 
     .ko {
     margin: 20px;
+  }
+
+  .igo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
   }
 
      .href {

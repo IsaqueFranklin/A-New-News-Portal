@@ -14,6 +14,10 @@ const Post = new Schema({
         type: String,
         required: true
     },
+    email: {
+        type: String,
+        required: true
+    },
     conteudo: {
         type: String,
         required: true

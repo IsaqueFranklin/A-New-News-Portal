@@ -128,6 +128,7 @@ router.post('/publish', eUser, (req, res)=>{
         const novoPost = {
             conteudo: req.body.editor,
             autor: req.user.nome,
+            email: req.user.email,
             titulo: req.body.titulo,
             data: dateString,
             thumb: req.body.thumb,
@@ -145,7 +146,7 @@ router.post('/publish', eUser, (req, res)=>{
 })
 
 router.get('/painel', eUser, (req, res)=>{
-    Post.find({ autor: req.user.nome }).sort({_id: -1}).lean().then((posts)=>{
+    Post.find({ email: req.user.email }).sort({_id: -1}).lean().then((posts)=>{
         res.render('admin/posts', {posts: posts})
     })
 })
@@ -195,11 +196,12 @@ router.get('/bio', eUser, (req, res)=>{
 })
 
 router.post('/bioedit', eUser, (req, res)=>{
-    Admin.findOne({nome: req.user.nome}).lean().then((users)=>{
+    Admin.findOne({nome: req.user.nome}).then((users)=>{
         users.nome = req.body.nome;
         users.bio = req.body.bio;
+        users.email = req.user.email;
 
-        users.save().lean().then(()=>{
+        users.save().then(()=>{
             req.flash('success_msg', 'Perfil editado com sucesso.')
             res.redirect('/admin/painel')
         }).catch((err)=>{

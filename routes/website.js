@@ -29,9 +29,9 @@ router.get('/artigos', (req, res)=>{
     })
 })
 
-router.get('/perfil/:autor', (req, res)=>{
-    Admin.findOne({nome: req.params.autor}).lean().then((users)=>{
-        Post.find({autor: req.params.autor}).sort({_id: -1}).lean().then((posts)=>{
+router.get('/perfil/:email', (req, res)=>{
+    Admin.findOne({email: req.params.email}).lean().then((users)=>{
+        Post.find({email: req.params.email}).sort({_id: -1}).lean().then((posts)=>{
             res.render('website/perfil', {users: users, posts: posts})
         })
     })
