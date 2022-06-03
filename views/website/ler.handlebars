@@ -5,17 +5,15 @@
 <div class="container-sm">
     <div class="links cont">
     {{#if user}}
-        <br>
         <a href="/admin/editar/{{posts._id}}"><button class="btns">Editar</button></a>
         <a href="/admin/excluir/{{posts._id}}"><button class="btns">Deletar</button></a>
-        <br>
-        <br>
-        <br>
     {{else}}
     {{/if}}
     <a href="/{{posts.category}}"><button class="btns">{{posts.category}}</button></a>
     <br>
     <p class="text">Publicado em {{posts.data}} por <a href="/website/perfil/{{posts.email}}">{{posts.autor}}</a></p>
+    <hr>
+    <br>
     <h5 class="title">{{posts.titulo}}</h5>
     <br>
     <div class="" align="">
@@ -155,9 +153,9 @@
 @media (max-width: 768px) {
     .links {
         padding: 0px;
-        margin-top: 100px;
-        margin-left: 30px;
-        margin-right: 30px;
+        margin-top: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .inlinks {
@@ -185,7 +183,7 @@
     }
 
     .borda {
-      margin-bottom: 50px;
+      margin-bottom: 10px;
       padding: 0px;
       height: 370px;
       width: 100%;
