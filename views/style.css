@@ -1,0 +1,285 @@
+.carousel-item {
+    width: 100%;
+  }
+
+  .ilireverse {
+    filter: brightness(300%);
+  }
+
+  .ko {
+    margin: 20px;
+  }
+
+  .href {
+        text-decoration: none;
+        text-decoration-color: transparent;
+        padding: 0px;
+        margin: 0px;
+        color: black;
+    }
+
+    .href:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    .effect {
+        transition: 0.5s;
+    }
+
+    .effect:hover {
+        transform: scale(1.05);
+    }
+
+  .btns {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #90EE90;
+        transition: all 0.3s ease-out;
+    }
+
+    .btns:hover,
+    .btns:hover {
+        background: #90EE90;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+
+  .btns2 {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #ff5050;
+        transition: all 0.3s ease-out;
+    }
+
+    .btns2:hover,
+    .btns2:hover {
+        background: #ff5050;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+
+  .btns3 {
+        background-color: transparent;
+        color: #060d13;
+        padding: 5px 10px;
+        border: 1px solid #0d0d0d;
+        transition: all 0.3s ease-out;
+        margin: 7px;
+    }
+
+    .btns3:hover,
+    .btns3:hover {
+        background: #0d0d0d;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
+
+    .ma {
+      margin-bottom: 20px;
+    }
+
+    .title2 {
+      font-size: 30px;
+    }
+
+    .text2 {
+      font-size: 15px;
+    }
+
+    .text3 {
+      font-size: 20px;
+    }
+
+
+@media (max-width: 768px) {
+    .links {
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .title {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .ig {
+        height: 200px;
+        width: 150px;
+        border-radius: 8px;
+        align-items: center;
+    }
+
+    .alig {
+        align-items: center;
+    }
+
+    .borda {
+      margin-bottom: 10px;
+      padding: 0px;
+      height: 250px;
+      width: 100%;
+    }
+
+    .ili {
+    height: 40%;
+    width: 100%;
+    border-radius: 0px;
+    filter: brightness(65%);
+  }
+
+  .hei {
+    margin-bottom: 90px;
+  }
+}
+
+
+@media (min-width: 768px) {
+    .links {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .ig {
+        height: 0px;
+        width: 0px;
+        border-radius: 8px;
+    }
+
+    .borda {
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 100px;
+    }
+
+    .ili {
+      height: 600px;
+      min-width: 100%;
+      border-radius: 0px;
+      filter: brightness(65%);
+    }
+
+    .hei {
+      margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 1000px) {
+  .links {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .ig {
+        height: 120px;
+        width: 150px;
+        border-radius: 8px;
+    }
+
+    .borda {
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 120px;
+    }
+
+    .ili {
+      min-height: 70%;
+      width: 100%;
+      border-radius: 0px;
+      filter: brightness(65%);
+    }
+
+    .hei {
+      margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .links {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    
+  .title {
+    font-size: 50px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+    .ig {
+        height: 120px;
+        width: 170px;
+        border-radius: 8px;
+    }
+
+    .borda {
+      margin-bottom: 30px;
+      padding: 0px;
+      height: 120px;
+      width: 100%;
+    }
+
+    .ili {
+    height: 80%;
+    width: 100%;
+    border-radius: 0px;
+    filter: brightness(65%);
+  }
+
+  .hei {
+    margin-bottom: 260px;
+  }
+}
