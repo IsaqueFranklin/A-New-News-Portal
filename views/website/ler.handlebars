@@ -2,25 +2,25 @@
 <meta name="keywords" content="{{posts.titulo}}">
 <title>{{posts.titulo}}</title>
 
-<div class="container-sm">
-    <div class="links cont">
+<div class="container-md">
+    <div class="">
     {{#if user}}
         <a href="/admin/editar/{{posts._id}}"><button class="btns">Editar</button></a>
         <a href="/admin/excluir/{{posts._id}}"><button class="btns">Deletar</button></a>
     {{else}}
     {{/if}}
+    <br>
     <a href="/{{posts.category}}"><button class="btns">{{posts.category}}</button></a>
+    <br>
     <br>
     <p class="text">Publicado em {{posts.data}} por <a href="/website/perfil/{{posts.email}}">{{posts.autor}}</a></p>
     <hr>
-    <br>
-    <h5 class="title">{{posts.titulo}}</h5>
-    <br>
     <div class="" align="">
       <img src='{{posts.thumb}}' alt='imagem de capa do post' class='total' align="" />
       <br>
     </div>
     <br>
+    <h5 class="title3">{{posts.titulo}}</h5>
     <br>
     <div align="justify" class="">
       {{{posts.conteudo}}}
@@ -29,27 +29,25 @@
     </div>
 </div>
 
-<div class="container-sm">
-  <div class="links cont">
+<div class="container-md">
+  <div class="">
   <br>
   <div class="">
-    <h7 class="title" align="center">Posts recentes</h7>
+    <h7 class="title2" align="center">Recentes</h7>
   </div>
-  <br>
   <br>
   {{#each post}}
     <a href="/website/ler/{{_id}}" class="href">
-    <div class="effect borda">
+    <div class="effect cardposts alig">
         <div class="row no-gutters">
-            <div class="col-md-3">
-                <img src="{{thumb}}" class="card-img ig" alt="thumbnail">
+            <div class="col-sm-2">
+                <img src="{{thumb}}" class="ig" alt="thumbnail">
             </div>
-            <div class="ko">
+            <div class="alig">
+                <br>
                 <small class="card-text">Publicado em {{data}}</small>
                 <br>
-                <h7 class="card-title">{{titulo}}</h7>
-                <br>
-                <p class="card-text text2">Escrito por {{autor}}</p>
+                <h2 class="title">{{titulo}}</h2>
             </div>
             
         </div>
@@ -57,11 +55,10 @@
     </a>
   {{/each}}
   <br>
-  <h7 class="text center">Veja todos os posts da <a href="/website/artigos">Nautilus</a></h7>
-  <br>
+  <h7 class="text3 center">Veja todos os artigos da <a href="/website/artigos">Starterpack</a></h7>
   <br>
   </div>
-  <hr>
+  <hr style="color: #fff">
 </div>
 
 
@@ -69,7 +66,23 @@
      crossorigin="anonymous"></script>
 <style>
 
-    .href {
+  .back {
+    background-image: linear-gradient(to left, #1B50D8, #0a0a0a);
+  }
+
+      .carousel-item {
+    width: 100%;
+  }
+
+  .ilireverse {
+    filter: brightness(300%);
+  }
+
+  .ko {
+    margin-left: 20px;
+  }
+
+  .href {
         text-decoration: none;
         text-decoration-color: transparent;
         padding: 0px;
@@ -82,98 +95,128 @@
         color: black;
     }
 
-    .ko {
-    margin: 20px;
-  }
-
     .effect {
         transition: 0.5s;
+
     }
+
+  .cardposts {
+      padding: 5px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: solid #fff;
+      border-width: 0.5px;
+  }
+
+  .postImg {
+    height: 150px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
     .effect:hover {
         transform: scale(1.05);
     }
 
-    .total {
-        width: 100%;
-        align-self: center;
-    }
-
-    .cont {
-        align-items: center;
-        justify-content: center;
-    }
-
-    .marker {
-        background-color: Yellow;
-    }
-
   .btns {
         background-color: transparent;
-        color: #060d13;
+        color: #1B50D8;
         padding: 4px 10px;
-        border: 1px solid #060d13;
+        border: 1px solid #1B50D8;
         transition: all 0.3s ease-out;
     }
 
     .btns:hover,
     .btns:hover {
-        background: #060d13;
+        background: #1B50D8;
         color: #fff;
         transition: all 0.3s ease-out;
     }
 
-  .title {
-    font-size: 30px;
-  }
+  .btns2 {
+        background-color: transparent;
+        color: #060d13;
+        padding: 4px 10px;
+        border: 1px solid #ff5050;
+        transition: all 0.3s ease-out;
+    }
 
-  .title2 {
-    font-size: 18px;
-  }
+    .btns2:hover,
+    .btns2:hover {
+        background: #ff5050;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
 
-  .text {
-    font-family: 'Teko', sans-serif;
-    font-size: 20px;
-  }
+  .btns3 {
+        background-color: transparent;
+        color: #060d13;
+        padding: 5px 10px;
+        border: 1px solid #0d0d0d;
+        transition: all 0.3s ease-out;
+        margin: 7px;
+    }
 
-  h1, h2, h3, h4 {
-    font-family: 'Big Shoulders Display';
-  }
+    .btns3:hover,
+    .btns3:hover {
+        background: #0d0d0d;
+        color: #fff;
+        transition: all 0.3s ease-out;
+    }
 
-  .lop2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
+    .ma {
+      margin-bottom: 20px;
+    }
 
+    .title2 {
+      font-size: 30px;
+    }
 
+    .title3 {
+      font-size: 50px;
+    }
+
+    .text2 {
+      font-size: 15px;
+    }
+
+    .text3 {
+      font-size: 20px;
+    }
+
+  .alig {
+        align-items: center;
+        align-content: center;
+    }
 
 
 @media (max-width: 768px) {
-    .links {
-        padding: 0px;
-        margin-top: 0px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .inlinks {
+  .links {
         padding: 0px;
         margin-top: 10px;
         margin-left: 5px;
         margin-right: 5px;
     }
+  
 
-    img {
-        max-height: 100%;
-        max-width: 100%;
-        border-radius: 8px;
-    }
+    .title {
+    font-size: 20px;
+  }
 
-    .ig {
+  .text {
+    font-size: 15px;
+  }
+
+  img {
+      max-height: 100%;
+      max-width: 100%;
+  }
+
+  .ig {
         height: 200px;
-        width: 150px;
+        width: 100%;
         border-radius: 8px;
         align-items: center;
     }
@@ -185,36 +228,89 @@
     .borda {
       margin-bottom: 10px;
       padding: 0px;
-      height: 370px;
+      height: 250px;
       width: 100%;
     }
+
+    .ili {
+    height: 40%;
+    width: 100%;
+    border-radius: 0px;
+    filter: brightness(45%);
+    filter:blur(50%)
+  }
+
+  .hei {
+    margin-bottom: 90px;
+  }
 }
 
 
 @media (min-width: 768px) {
-    .links {
-        padding: 0px;
-        margin-top: 10px;
-        margin-left: 70px;
-        margin-right: 70px;
+    
+
+    .title {
+      font-size: 40px;
     }
 
-    .inlinks {
-        padding: 0px;
-        margin-top: 10px;
-        margin-left: 0px;
-        margin-right: 0px;
+    .text {
+      font-size: 20px;
     }
 
     img {
-        max-height: 300px;
-        max-width: 400px;
-        border-radius: 8px;
+        max-height: 100%;
+        max-width: 100%;
     }
 
     .ig {
         height: 120px;
-        width: 150px;
+        width: 160px;
+        border-radius: 8px;
+    }
+
+    .borda {
+      margin-bottom: 50px;
+      padding: 0px;
+      height: 100px;
+    }
+
+    .ili {
+      height: 600px;
+      min-width: 100%;
+      border-radius: 0px;
+       filter: brightness(45%);
+      filter:blur(50%)
+    }
+
+    .hei {
+      margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 1000px) {
+  .links {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+  .ig {
+        height: 120px;
+        width: 160px;
         border-radius: 8px;
     }
 
@@ -223,47 +319,61 @@
       padding: 0px;
       height: 120px;
     }
+
+    .ili {
+      min-height: 70%;
+      width: 100%;
+      border-radius: 0px;
+       filter: brightness(45%);
+      filter:blur(50%)
+    }
+
+    .hei {
+      margin-bottom: 50px;
+    }
 }
 
 @media (min-width: 1200px) {
-    .links {
-        padding: 0px;
-        margin-top: 10px;
-        margin-left: 200px;
-        margin-right: 200px;
-    }
+    
 
-    .inlinks {
-        padding: 0px;
-        margin-top: 10px;
-        margin-left: 200px;
-        margin-right: 200px;
-    }
+    
 
     img {
         max-height: 100%;
         max-width: 100%;
-        border-radius: 8px;
     }
+    
+  .title {
+    font-size: 20px;
+  }
 
-    .ig {
-        height: 120px;
-        width: 170px;
-        border-radius: 8px;
-    }
+  .text {
+    font-size: 20px;
+  }
 
-    .borda {
-      margin-bottom: 50px;
-      padding: 0px;
-      min-height: 120px;
-      width: 100%;
-    }
+.ig {
+  height: 120px;
+  width: 160px;
+  border-radius: 8px;
 }
 
+    .borda {
+      margin-bottom: 30px;
+      padding: 0px;
+      height: 120px;
+      width: 100%;
+    }
 
+    .ili {
+    height: 80%;
+    width: 100%;
+    border-radius: 0px;
+    filter: brightness(45%), blur(80%);
+  }
 
-
-
-
-
+  .hei {
+    margin-bottom: 260px;
+  }
+}
+    
 </style>
