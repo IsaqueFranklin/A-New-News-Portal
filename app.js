@@ -11,6 +11,8 @@ const admin = require('./routes/admin')
 const passport = require('passport')
 require('./config/auth')(passport)
 
+import { important } from '.env';
+
 require('./models/posts')
 const Post = mongoose.model('posts')
 
@@ -48,7 +50,7 @@ app.set('view engine', 'handlebars')
 //Mongoose    
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb+srv://newsportal:b1l1ona1re@cluster0.9woam.mongodb.net/myFirstDatabase?retryWrites=true&w=majority').then(function(){
+mongoose.connect(important).then(function(){
     console.log('Conectado ao mongo...')
 }).catch(function(err){
     console.log('Erro ao conectar com mongo.')
@@ -61,8 +63,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 //Routes
 
-app.use('/website', website)
-app.use('/admin', admin)
+app.route('/website', website)
+app.route('/admin', admin)
 
 app.get('/', (req, res) => {
     Post.find().sort({_id: -1}).limit(10).lean().then((posts)=>{
