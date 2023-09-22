@@ -1,17 +1,67 @@
-<meta name="description" content="Veja toda as publicações mais recentes. Crie seu blog e comece a compartilhar seu conteúdo gratuitamente.">
-<title>Notícias</title>
-
-<div class="carousel-inner">
-    <div class="carousel-item active back">
-      <div class="d-block w-100  ili ilireverse"></div>
-      <div class="carousel-caption ma hei">
-        <h1 class="title3">Starterpack</h1>
-        <p class="text">Negócios e tecnologia</p>
+<div class="container">
+  <div class="bg-white">
+    
+    <div class="relative isolate overflow-hidden px-6 pt-16 shadow-2xl rounded-3xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0" style="background: fixed no-repeat top center url('https://images.unsplash.com/photo-1669951584605-4deba095a87f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80'); box-shadow: inset 0 0 0 2000px rgba(5, 24, 88, 0.3); margin-top: 180px;">
+    <div class="mx-auto max-w-7xl py-5 sm:px-6 sm:py-32 lg:px-8">
+      <div class="">
+        <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Sem Reais</h2>
+          <p class="mt-6 text-xl leading-8 text-white">Um portal exclusivamente dedicado ao empreendedor de primeira viagem. Aprenda como montar, regularizar, e administrar seu primeiro (ou talvez segundo) negócio.</p>
+          <div class="mt-10 flex items-center justify-center gap-x-6" style="margin-bottom: 50px;">
+            <a href="#conteudo" class="rounded-md bg-white px-2 py-3 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Consumir conteúdo</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-white">Falar com consultor<span aria-hidden="true">→</span></a>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+    <section class="bg-white">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-8 md:p-12 mb-8" align="center">
+                <h1 class="text-gray-800 text-2xl md:text-5xl tracking-tight font-medium mb-2">Imagine, crie, empreenda.</h1>
+                <p class="text-lg font-normal text-gray-800 dark:text-gray-400 mb-6">Capacitando os empreendedores e empresários da economia 4.0 da segunda década do século 21.</p>
+                
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+              {{#each post}}
+                <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-2 md:p-4" style="background: url('{{thumb}}');">    
+                  <a href="/website/ler/{{_id}}" class="" style="text-decoration: none; margin-top: 30px">         
+                    <h2 class="text-white text-xl font-medium mb-2">{{titulo}}</h2>
+                    <p class="text-lg font-normal text-white mb-4">Publicado em {{data}}</p>
+                    <a href="#" class="text-white dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Ler mais</a>
+                  </a>
+                </div>
+              {{/each}}
+            </div>
+        </div>
+    </section>
+
+
+    <!--<div class="w-full">
+      <div class="">
+        <h7 class="title2" align="center">Recentes</h7>
+      </div>
+      {{#each posts}}
+      
+      <a href="/website/ler/{{_id}}" style="width: full;" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl" style="width: 100%;">
+          <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="{{thumb}}" alt="">
+          <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{titulo}}</h5>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Publicado em {{data}}</p>
+          </div>
+      </a>     
+      {{/each}}
+      <br>
+      <h7 class="text3 center">Veja todos os artigos da <a href="/website/artigos">Starterpack</a></h7>
+      <br>
+      <hr style="color: #fff">
+    </div>-->
+
+  </div>
 </div>
 
-<div class="container-md">
+<div class="container-md" id="conteudo">
   <div class="">
   <br>
   <div class="">
@@ -37,10 +87,10 @@
     </a>
   {{/each}}
   <br>
-  <h7 class="text3 center">Veja todos os artigos da <a href="/website/artigos">Starterpack</a></h7>
+  <h7 class="text3 center">Veja todos os artigos da <a href="/website/artigos">Sem Reais</a></h7>
   <br>
   </div>
-  <hr style="color: #fff">
+  <br>
 </div>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5268620886472598"
@@ -358,3 +408,8 @@
 }
     
 </style>
+
+
+
+    
+      
